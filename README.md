@@ -1,1 +1,1 @@
-# Winter-Wdio-2023
+# JS-Winter-Wdio-2023
