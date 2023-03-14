@@ -5,9 +5,13 @@
     "@wdio/mocha-framework": "^8.4.0",
     "@wdio/spec-reporter": "^8.4.0",
     "chromedriver": "^110.0.0",
-    "wdio-chromedriver-service": "^8.1.1"
+    "wdio-chromedriver-service": "^8.1.1",
+    "chai": "^4.3.7"
   },
   "scripts": {
     "wdio": "wdio run ./wdio.conf.js"
+  },
+  "dependencies": {
+    "chai": "^4.3.7"
   }
 }
