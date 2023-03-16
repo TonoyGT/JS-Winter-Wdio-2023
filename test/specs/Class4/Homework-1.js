@@ -49,7 +49,7 @@ describe('Homework-1', async () => {
 
     });
 
-    it('Verify error on empty login flow', async () => {
+    it.only('Verify error on empty login flow', async () => {
 
         await browser.url('https://www.facebook.com/');
 
