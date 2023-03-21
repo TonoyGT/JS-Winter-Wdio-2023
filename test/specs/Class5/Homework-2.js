@@ -34,7 +34,7 @@ describe('Homework-2', async () => {
 
     // TC-1: Verify the current date is select by default in Sign Up dropdown
 
-    it('Verify the current date is select by default in Sign Up dropdown', async () => {
+    it.only('Verify the current date is select by default in Sign Up dropdown', async () => {
 
         //1. Launch facebook.com
 
@@ -67,7 +67,7 @@ describe('Homework-2', async () => {
     // TC-2: Verify the travelers count on homepage
 
 
-    it.only('Verify the travelers count on homepage', async () => {
+    it('Verify the travelers count on homepage', async () => {
 
         //1. Launch hotels.com
 
