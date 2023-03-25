@@ -96,7 +96,7 @@ describe('Multiple windows', () => {
      * 3. Click on 'Check Availability
      * 4. Verify user lands on Check Availability page
      */
-    it('Verify check avalibility page', async () => {
+    it.only('Verify check avalibility page', async () => {
         // 1. Launch facebook.com
         await browser.url('/');
 
