@@ -52,13 +52,13 @@ describe('findElements function', () => {
      * 2. Enter 'new' in the destination
      * 3. Select 'Newport Beach' from auto-suggestion.
      */
-    it('Autosuggestion: Verify user can select value from auto-suggestion', async () => {
+    it.only('Autosuggestion: Verify user can select value from auto-suggestion', async () => {
         // 1. Launch hotels.com
         await browser.url('https://www.hotels.com/')
         await browser.pause(2000);
 
         // 2. Enter 'new' in the destination
-        await $('button[data-stid=destination_form_field-menu-trigger]').click();
+        await $('//button[@aria-label="Going to"]').click();
         await $('#destination_form_field').setValue('new');
 
         await browser.pause(2000);
@@ -97,6 +97,7 @@ describe('findElements function', () => {
 
 
         const allSuggestions = await $$('//li[contains(@class, "has-subtext")]//button');
+        console.log('GGGGGGGGGGGGGGGGGGGG', allSuggestions.length);
 
         for (const suggestion of allSuggestions) {
             const text = await suggestion.getAttribute('aria-label');
