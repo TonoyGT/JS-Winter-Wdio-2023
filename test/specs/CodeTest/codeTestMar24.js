@@ -17,7 +17,7 @@ describe('WebDriver IO Code Test', () => {
          */
 
 
-        it.only('Verify rewards form is empty and Conitnue button is disabled', async () => {
+        it('Verify rewards form is empty and Conitnue button is disabled', async () => {
 
     //1. Launch hotels.com
             
@@ -90,7 +90,7 @@ describe('WebDriver IO Code Test', () => {
          * 3. If not already, go to current month
          * 4. -> Verify all past dates are disabled
          */
-        it('Verify past dates are disabled in Calendar', async () => {
+        it.only('Verify past dates are disabled in Calendar', async () => {
 
     //1. Launch hotels.com
             
@@ -101,6 +101,33 @@ describe('WebDriver IO Code Test', () => {
 
         const dateSectionL = await $('//button[@id="date_form_field-btn"]');
         dateSectionL.click();
+
+    //3. If not already, go to current month
+        
+        const currentMonthSelectionL = await $('//button[@data-stid="date-picker-paging"]/preceding-sibling::button[@class="uitk-button uitk-button-medium uitk-button-only-icon uitk-layout-flex-item uitk-button-paging"]');
+        currentMonthSelectionL.click();
+        await browser.pause(5000);
+
+        const allDisabledDateL = await $$('//button[contains(@aria-label, "date disabled")]');
+        //const ab = allDisabledDateL.length;
+        console.log('HHHHHHH',allDisabledDateL);
+        //expect(ab, 'NOT Empty').to.be.equal(23);
+        await browser.pause(5000);
+
+        //const currentDateL = await $('//button[contains(@aria-label, "current check in date")]');
+       // let currentDateValue = await currentDateL.getAttribute('data-day');
+       // console.log('HH', currentDateValue);
+        //expect(passValue, 'NOT Empty').to.be.equal('');
+
+        /*const allLinks = await $$('<a>');
+        expect(allLinks.length > 40, 'Number of links are NOT greater than 40').to.be.true;
+        for (const handle of allHandles) {
+            await browser.switchToWindow(handle);
+            const currentUrl = await browser.getUrl();
+            console.log(`current url -> ${currentUrl}\n\n`);
+            a = (currentUrl.localeCompare('https://www.hotels.com/hotel-rewards-pillar/hotelscomrewards.html') === 0);
+            }
+        expect(a, 'Same').to.be.true;*/
 
             
         
